@@ -12,17 +12,17 @@
 console.log("Hello, world!");
 
 //let keywords = ["10 самых популярных шрифтов от Google", "Отключение редакций и ревизий в WordPress", "Вывод произвольных типов записей и полей в WordPress"];
-let keywords = ["Редакции — это резервные копии"];
+//let keywords = ["Редакции — это резервные копии"];
+
+let keywords = ["Редакции — это резервные копии", "10 самых популярных шрифтов от Google", "Отключение редакций и ревизий в WordPress", "Вывод произвольных типов записей и полей в WordPress"];
 let keyword = keywords[getRandom(0, keywords.length)];
 let btnK = document.getElementsByName("btnK")[0];
 let links = document.links;
 let googleInput = document.getElementsByName("q")[0];
 
-if(btnK !== undefined) {
 if (btnK !== undefined) {
   //console.log(keyword);
   let i = 0;
-  let timerId = setInterval(()=> {
   let timerId = setInterval(() => {
     googleInput.value += keyword[i];
     i++;
@@ -30,7 +30,6 @@ if (btnK !== undefined) {
       clearInterval(timerId);
       btnK.click();
     }
-  },500);
   }, 500);
 } else if (location.hostname == "napli.ru") {
   setInterval(() => {
@@ -50,10 +49,8 @@ if (btnK !== undefined) {
       let link = links[i];
       nextGooglePage = false;
       //console.log("Нашел строку " + links[i]);
-      setTimeout(()=>{
       setTimeout(() => {
         link.click();
-      }, getRandom(1500,4000));
       }, getRandom(1500, 4000));
       break;
     }
@@ -63,8 +60,6 @@ if (btnK !== undefined) {
     location.href = "https://www.google.com/";
   }
   if (nextGooglePage) {
-    setTimeout(()=>{pnnext.click();}
-               , getRandom(2000,4000));
     setTimeout(() => {
       pnnext.click();
     }, getRandom(2000, 4000));
