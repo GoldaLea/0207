@@ -269,8 +269,7 @@
         
         function calc(operator) {
             if (operator === "dollar") {
-                d = + rub.value / d;
-                sum.value = (d.toFixed(2));
+                sum.value = (+ rub.value / d).toFixed(2);
             } else if (operator === "euro") {
                 sum.value = (+ rub.value / r).toFixed(2);
             } else if (operator === "pound") {
