@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- Font Gabriela -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
+
+    <title>Сотрудничество</title>
+    <style>
+        body {
+            font-family: 'Gabriela', serif;
+            background-color: rgb(222, 243, 222);
+        }
+        h2{
+            color:#CB2222;
+            text-shadow: black 0 0 2px;
+        }
+
+        .menu{ /*обращение к навигационной панели*/
+            width:100%;
+            background:#23DD40;
+            text-align:center;      
+        }
+        .menu_list{
+            display:flex;
+            text-align:center;
+            padding-left:0px;
+            margin-top:0;
+            margin-bottom:0;
+        }
+        .menu_link{ /*обращение к каждой строчке списка*/
+            display:block;
+            padding: 2rem 1.5rem;
+            will-change: color; /*при определенных условиях будет меняться цвет текста*/
+            transition: color .25s ease-out; /*будет меняться цвет за 25 миллисекунд*/
+            font-weight:700; /*жирность букв*/
+            color: white; /*на какой цвет меняется*/
+            text-decoration:none; /*убирает декорацию текста*/
+            text-transform:uppercase; /*все буквы в верхнем регистре*/
+        }
+        .menu_link:hover{ /*при наведении будет меняться*/
+            color:orange; /*будет меняться цвет текста*/
+            text-decoration:none; /*декорация текста убирается*/
+        }
+        @media (min-width: 768px){ /*условия для девайсов с минимальной шириной экрана 768 пикселей*/
+            .menu_group{
+                flex-grow:1; /*распределяет все элементы по ширине экрана*/
+            }
+            .menu_link{
+                position:relative; /*позиция зависит от ее предыдущей позиции*/
+                overflow:hidden; /*видно только то, что внутри блока*/
+            }
+        }
+
+        .box1 {
+            display:flex;
+            flex-direction: row;
+        }
+        .box2 {
+            background-color: rgba(222, 243, 222, 0.5);
+            border: 5px groove yellowgreen;
+            padding: 20px;
+            margin-left: 20px;
+        }
+        form {
+			background-color: white;
+			padding: 2rem;
+			border-radius: 6px;
+			filter: drop-shadow(1px 2px 4px hsl(56, 38%, 58%));
+			transform: translateY(0px);
+		}
+		form:focus-within {
+			transform: translateY(-4px);
+			filter: drop-shadow(2px 4px 16px hsl(56, 38%, 58%));
+		}
+        .fa-solid {
+			color: #dc3545;
+		}
+		span > i {
+			cursor: pointer;
+		}
+		span > i:hover {
+			color: gold;
+		}
+
+        .valuta_box {
+            background-color: palegoldenrod;
+            border: 5px groove yellowgreen;
+            display: inline-block;
+            flex-direction: column;
+            text-align: center;
+            padding: 10px;
+            margin: 30px;
+        }
+        .valuta {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .iconify {
+            width: 25px;
+            height: 25px;
+        }
+        
+        footer{
+            box-sizing:border-box;
+            background: #0B7E5C;
+            text-align:center;
+            height:60px;
+            padding:10px;
+            margin-top: 50px;
+        }
+    </style>
+  </head>
+  <body>
+<!--Начало меню-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="collapse navbar-collapse menu">
+            <ul class="navbar-nav mr-auto menu_list">
+                <li class="menu_group"><a href="laima.php" class="menu_link">Обо мне</a></li>
+                <li class="menu_group"><a href="laima.php" class="menu_link">Преподаватель</a></li>
+                <li class="menu_group"><a href="design.php" class="menu_link">Веб-дизайнер</a></li>
+                <li class="menu_group"><a href="library.php" class="menu_link">Библиотека</a></li>
+                <li class="menu_group"><a href="reg.php" class="menu_link">Сотрудничество</a></li>
+                <li class="menu_group"><a href="feedback.php" class="menu_link">Отзывы</a></li>
+                <li>
+                    <span class="iconify-inline" data-icon="emojione:flag-for-latvia" style="font-size: 20px;"></span>
+                    <span class="iconify-inline" data-icon="emojione:flag-for-russia" style="font-size: 20px;"></span>
+                    <span class="iconify-inline" data-icon="emojione:flag-for-spain" style="font-size: 20px;"></span>
+                    <span class="iconify-inline" data-icon="emojione:flag-for-israel" style="font-size: 20px;"></span>
+                    <span class="iconify-inline" data-icon="emojione:flag-for-united-kingdom" style="font-size: 20px;"></span>
+                    <span class="iconify-inline" data-icon="emojione:flag-for-united-states" style="font-size: 20px;"></span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Начало блока с регистрацией-->
+    <div class="container box1">
+        <div class="col-md-6 text-center box2">
+            <h2>Форма регистрации на сайте</h2>
+            <form onsubmit="sendForm(this); return false;">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa-solid fa-user-astronaut fa-lg fa-fw"></i>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Имя" required name="name">
+                </div>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa-solid fa-user-astronaut fa-lg fa-fw"></i>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Фамилия" required name="lastname">
+                </div>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa-solid fa-envelope fa-lg fa-fw"></i></div>
+                    </div>
+                    <input type="email" class="form-control" placeholder="E-mail" required name="email">
+                </div>
+                <p id="info"></p>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa-solid fa-lock fa-lg fa-fw"></i></div>
+                    </div>
+                    <input type="password" class="form-control" placeholder="Пароль" required id="formPass" name="pass">
+                    <span onmousedown="formPass.type ='text'; this.nextElementSibling.hidden = false; this.hidden = true;">&nbsp;<i class="fa-solid fa-eye fa-lg"></i></span>
+                    <span hidden onmouseup="formPass.type = 'password'; this.previousElementSibling.hidden = false; this.hidden = true;">&nbsp;<i class="fa-solid fa-eye-slash fa-lg"></i></span>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="autoSizingCheck2" required="">
+                    <label class="form-check-label" for="autoSizingCheck2">Даю согласие на обработку персональных данных</label>
+                </div>
+                <input type="submit" class="btn btn-danger form-control" value="Зарегистрироваться">
+            </form>
+        </div>
+    <!--Форма авторизации-->
+        <div class="col-md-6 text-center box2">
+            <h2>Вход в личный кабинет</h2>
+            <form onsubmit="sendFormUser(this); return false;">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa-solid fa-envelope fa-lg fa-fw"></i></div>
+                    </div>
+                    <input type="email" class="form-control" placeholder="E-mail" required="" name="email">
+                </div>
+                <p id="info"></p>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa-solid fa-lock fa-lg fa-fw"></i></div>
+                    </div>
+                    <input type="password" class="form-control" placeholder="Пароль" required="" id="formPass" name="pass">
+                    <span onmousedown="formPass.type ='text'; this.nextElementSibling.hidden = false; this.hidden = true;">&nbsp;<i class="fa-solid fa-eye fa-lg"></i></span>
+                    <span hidden="" onmouseup="formPass.type = 'password'; this.previousElementSibling.hidden = false; this.hidden = true;">&nbsp;<i class="fa-solid fa-eye-slash fa-lg"></i></span>
+                </div>
+                <input type="submit" class="btn btn-danger form-control" value="Авторизироваться">
+            </form>
+        </div>
+    </div>
+
+<!--Начало калькулятора-->
+    <div class="valuta_box">
+        <h3>Бизнес-калькулятор</h3>
+        <p>Введите сумму в рублях</p>
+        <input type="text" placeholder="Рубль" id="rub">
+        <div class="valuta">
+            <button onclick="calc('dollar')"><span class="iconify" data-icon="ant-design:dollar-circle-outlined"></span></button>
+            <button onclick="calc('euro')"><span class="iconify" data-icon="ant-design:euro-circle-outlined"></span></button>
+            <button onclick="calc('pound')"><span class="iconify" data-icon="ant-design:pound-circle-outlined"></span></button>
+            <button onclick="calc('yen')"><span class="iconify" data-icon="majesticons:yen-circle-line"></span></button>
+            <button onclick="calc('rupee')"><span class="iconify" data-icon="majesticons:rupee-circle-line"></span></button>
+            <button onclick="calc('shekel')"><span class="iconify" data-icon="bx:shekel"></span></button>
+        </div>
+        <input type="text" placeholder="Результат" id="sum">
+        <p>Курс ЦБ РФ на 22.05.2022</p>
+    </div>
+<!--Конец калькулятора-->
+
+    <footer>
+        <p>© Авторские права защищены 2022 год</p>
+    </footer>
+
+    <script>
+        /*Функция для формы регистрации*/
+        async function sendForm(form) {
+            let response = await fetch("php/reg_obr.php", {
+                method: "POST",
+                body: new FormData(form),
+            });
+            let result = await response.text();
+            if (result=="ok") {
+                alert("Вы успешно зарегистрированы!");
+                location.href="php/kabinet.php";
+            } else {
+                info.innerHTML="Такой пользователь уже существует!";
+            }
+        }
+
+        /*Функция для формы авторизации*/
+        async function sendFormUser(form) {
+            let response = await fetch("php/autorization_obr.php", {
+                method: "POST",
+                body: new FormData(form),
+            });
+            let result = await response.text();
+            if(result=="ok") {
+                location.href="php/kabinet.php";
+            } else {
+                info.innerHTML="Такой пользователь не существует!";
+            }
+        }
+
+        /*Функция для калькулятора*/
+        let rub = document.getElementById("rub");
+        let d=58.88;
+        let r=60.89;
+        let gbp=73.54;
+        let gpy=46.09;
+        let inr=76.12;
+        let sh=18.45;
+        
+        function calc(operator) {
+            if (operator === "dollar") {
+                d = + rub.value / d;
+                sum.value = (d.toFixed(2));
+            } else if (operator === "euro") {
+                sum.value = (+ rub.value / r).toFixed(2);
+            } else if (operator === "pound") {
+                sum.value = (+ rub.value / gbp).toFixed(2);
+            } else if (operator === "yen") {
+                sum.value = (+ rub.value / gpy).toFixed(2);
+            } else if (operator === "rupee") {
+                sum.value = (+ rub.value / inr).toFixed(2);
+            } else if (operator === "shekel") {
+                sum.value = (+ rub.value / sh).toFixed(2);
+            }
+        }
+    </script>
+
+
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <!-- Вариант 1: пакет jQuery и Bootstrap (включает Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+  </body>
+</html>
